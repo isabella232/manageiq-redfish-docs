@@ -7,7 +7,7 @@ inventory at a glance. To view it, first navigate to *Compute ->
 Physical Infrastructure -> Providers* page from the main navigation on the
 left, then click your {redfish-provider}.
 
-image:../../images/docs_redfish_using01_dashboard.png[alt="{redfish-provider} dashboard"]
+image::docs_redfish_using01_dashboard.png[alt="{redfish-provider} dashboard",500,align="center"]
 
 NOTE: The {redfish-provider} does not support targeted refreshing of the
 inventory. To make sure that the latest information is visible, please perform
@@ -17,18 +17,18 @@ be up-to-date after a few seconds.
 To obtain a tabular view of the inventory, switch to the *Summary View* of the
 {redfish-provider}'s dashboard:
 
-image:../../images/docs_redfish_using02_dashboard_summary.png[alt="Summary view of {redfish-provider} dashboard"]
+image::docs_redfish_using02_dashboard_summary.png[alt="Summary view of {redfish-provider} dashboard",500,align="center"]
 
 To view a list of the resources discovered through the inventory, click on
 the respective row of the *Relationships* table. For example, clicking on
 the *Physical Servers* row will take you to the list of physical servers:
 
-image:../../images/docs_redfish_using02_dashboard_summary.png[alt="Summary view of {redfish-provider} dashboard"]
+image::docs_redfish_using12_server_list.png[alt="Summary view of all {redfish-provider} physical servers",450,align="center"]
 
 A graphical representation of the managed data center can be displayed by
 navigating to *Compute -> Physical Infrastructure -> Topology*:
 
-image:../../images/docs_redfish_using11_topology.png[alt="Topology of {redfish-provider} entities in the inventory"]
+image::docs_redfish_using11_topology.png[alt="Topology of {redfish-provider} entities in the inventory",450,align="center"]
 
 === Identifying physical systems
 
@@ -36,39 +36,37 @@ Many physical servers are equipped with a LED for identifying it as a specific
 unit. Please use the server's documentation to locate it on the server's
 chassis.
 
-Depending on previous operation, the states of the identify LEDs may be random.
-To make sure that only the selected system's LED will be visible, we first
-make sure that all the physical servers' identify LEDs are off. To do this,
-we visit *Compute -> Physical Infrastructure -> Servers* from the navigation
-on the left. Here, we can see from the *LED State* column the current states of
-the identifying LED for the servers. To select all servers, we click on the
-*Select All* checkbox at the bottom of the page. Now the *Identify* menu
-becomes active:
+To identify a single system or a specific set of physical systems, we start by
+making sure that all the LEDs are off. To do this, we visit *Compute -> Physical
+Infrastructure -> Servers* from the navigation on the left. Here, we can see
+from the *LED State* column the current states of the identifying LED for the
+servers. To select all servers, we click on the *Select All* checkbox at the
+bottom of the page. Now the *Identify* menu becomes active:
 
-image:../../images/docs_redfish_using04_all_servers.png[alt="Identify menu and current state of the identify LED for the servers in the inventory"]
+image::docs_redfish_using04_all_servers.png[alt="Identify menu and current state of the identify LED for the servers in the inventory",500,align="center"]
 
-From the *Identify* menu, we click the *Turn LED Off*. We confirm the action
+From the *Identify* menu, we click the *Turn Off LED*. We confirm the action
 by clicking *OK* in the confirmation prompt that appears in the browser. Then
 we should see the status showing the success of sending the request:
 
-image:../../images/docs_redfish_using05_turn_off_led.png[alt="Confirmation of successfully requesting to turn off the LED"]
+image::docs_redfish_using05_turn_off_led.png[alt="Confirmation of successfully requesting to turn off the LED",300,align="center"]
 
 The LEDs on the servers should be off within a few seconds. To see the updated
 status in the {product-gui}, use the *Configuration -> Refresh Relationships
 and Power States*, wait a few seconds, then refresh the page in the browser.
 
-image:../../images/docs_redfish_using06_refresh.png[alt="Refreshing the inventory status"]
+image::docs_redfish_using06_refresh.png[alt="Refreshing the inventory status",200,align="center"]
 
 To control the LED for an individual server, we can first click on the physical
 server's name in the table. We obtain the physical server's summary view, which
 provides the same *Identify* menu as before. Here, we can also see the state
 of the identification LED:
 
-image:../../images/docs_redfish_using03_identify.png[alt="Identify menu and current state of the identify LED"]
+image::docs_redfish_using03_identify.png[alt="Identify menu and current state of the identify LED",400,align="center"]
 
 To make the server's identification LED blink, we click *Identify -> Blink
 LED*. We get a prompt for confirming the action. After clicking *OK*, the
-:product-gui: shows confirmation of the request sent. Shortly afterwards, the
+{product-gui} shows confirmation of the request sent. Shortly afterwards, the
 selected server's LED should start blinking.
 
 To see the status updated in the {product-gui}, we use the *Configuration ->
@@ -80,23 +78,23 @@ about the identify LED management actions and statuses.
 
 === Managing the Physical System's Power Status
 
-Physical servers may be powered off, powered on or restarted remotely
-through {product-gui} using {redfish-provider}.
+Physical servers may be remotely powered off, powered on or restarted through
+{product-gui} using {redfish-provider}.
 
-To power off a particular physical server, we first navigate *Compute ->
+To power off a particular physical server, we first navigate to *Compute ->
 Physical Infrastructure -> Servers* from the navigation on the left. On the
 server list, we click on the server's name. This takes us to the server's
 summary page, which provides the *Power* menu and displays the server's
 current power state:
 
-image:../../images/docs_redfish_using08_server_power_on.png[alt="Power menu and current state of the power to the server"]
+image::docs_redfish_using08_server_power_on.png[alt="Power menu and current state of the power to the server",500,align="center"]
 
 We can see that the server is currently powered on. To have it powered off, we
 click on *Power -> Power Off Immediately*. We get a prompt to confirm the
 selected action. After we click *Ok*, we will see the status showing the success
 of sending the request:
 
-image:../../images/docs_redfish_using09_turn_off_power.png[alt="Confirmation of successfully requesting to turn off the server immediately"]
+image::docs_redfish_using09_turn_off_power.png[alt="Confirmation of successfully requesting to turn off the server immediately",300,align="center"]
 
 The server should be powered off within a few seconds. To see the updated
 status in the {product-gui}, use the *Configuration -> Refresh Relationships
@@ -111,7 +109,7 @@ the power supply for the servers. To select all servers, we click on the *Select
 All* checkbox at the bottom of the page. Now the *Power* menu becomes
 active:
 
-image:../../images/docs_redfish_using010_all_servers.png[alt="Power menu and current power state of the servers in the inventory"]
+image::docs_redfish_using10_all_servers.png[alt="Power menu and current power state of the servers in the inventory"]
 
 From the *Power* menu, we click the *Power On*. We confirm the action
 by clicking *OK* in the confirmation prompt that appears in the browser. Then
@@ -126,3 +124,262 @@ Again depending on the {redfish} implementation, the statuses will cycle from
 Please refer to the <<ReleaseNotesRedfish>> section for further information
 about the power management actions and statuses.
 
+=== Physical Server Provisioning
+
+{redfish-provider-full} lets the users boot physical servers into a selected
+Operating System over the network. The process relies on a properly configured
+DHCP and PXE servers in the data center.
+
+Users must first create a new provisioning request and get it approved. Once
+the provisioning request is approved, the {redfish-provider} places the
+suitable NBP boot menus and configuration templates on the PXE server,
+configures physical servers to boot over the network, and restarts them. This
+in turn starts the Operating System installation or live boot.
+
+==== Adding PXE server to the {product-title}
+
+In {product-title}, a PXE server represents a NFS or SMB depot where certain
+files and folders have a special meaning. The process of adding a PXE Server
+is similar to that explained in the *PXE Provisioning* section of the
+*Provisioning Virtual Machines and Instances* chapter.
+
+We visit *Compute -> Infrastructure -> PXE*. Then, we click *Configuration ->
+Add a New PXE server*. We fill in the fields to describe the server.
+
+image::docs_redfish_using22_new_pxe_server_dialog.png[alt="New PXE Server dialog",512,align="center"]
+
+* *Name*: enter the human-friendly display name for this PXE server.
+* *Depot Type*: select the protocol supported by the server that the
+  {product-appliance} can write changes to.
+* *URI* (Network File System depots only): the access point to the Network
+  File System mount.
+* *Access URL*: the address of the HTTP server that serves the content of the
+  _Customization Directory_ folder.
+* *PXE Directory*: the path to the boot menu directory.
+* *Customization Directory*: the path to the directory with customization
+  templates.
+* *Filename*: the path to the boot menu file that contains menu entries for
+  all available Operating System images.
+
+All of the paths are relative to the depot access point. During provisioning,
+{product-title} will mount the depot, place the MAC-address-specific boot
+menus into the _PXE Directory_, and write MAC-address-specific customization
+templates to the _Customization Directory_.
+
+We click *Add* to add the new server. Then we perform *Configuration -> Refresh
+Relationships*. This will retrieve the list of available Operating System
+images from the boot menu file that we listed in the *Filename* field. Give
+refresh process a few seconds to finish and refresh the browser.
+
+image::docs_redfish_using24_refresh_relationships.png[alt="PXE Server view",423,align="center"]
+
+Once the *PXE Images* list gets populated, we first need to assign a system
+image type to each PXE image. This creates an association between a PXE image
+and the corresponding Customization Templates. Later, when we will create
+provisioning requests, we will need to supply both the PXE image to provision
+and the customization template, otherwise we won't be able to complete the
+request.
+
+image::docs_redfish_using23_pxe_server.png[alt="PXE Server view",777,align="center"]
+
+We switch to the *System Image Types* and use *Configuration -> Add a new
+System Image Type* to add new system image types as needed.
+
+image::docs_redfish_using25_add_system_image_type.png[alt="Add new System Image Type",491,align="center"]
+
+In the *Type* field, we leave the value *<Any>*. We confirm the new system image
+type's settings by clicking *Add*.
+
+Then we switch back to the *PXE Servers* tab and select the first PXE image,
+then click *Configuration -> Edit this PXE Image*.
+
+image::docs_redfish_using26_pxe_image.png[alt="View PXE Image properties",643,align="center"]
+
+From the *Type* drop-down, we select the appropriate name and click *Save*. We
+repeat the process for all the other PXE images.
+
+Finally, we switch to the *Customization Templates* tab. This shows the list
+of the system image types. For each system image type, we can create one or
+more customization templates, which the Operating System's installer process
+will use during the installation phase of the provisioning. For the Red Hat
+based systems, this will be a Kickstart file.
+
+image::docs_redfish_using27_customization_template.png[alt="Customization Template",857,align="center"]
+
+The *Configuration* menu options let us copy an existing customization template
+into a new one, add a new blank one, or edit an existing one. In all cases,
+we use the *Name* field to type in a human-friendly name, provide an optional
+*Description*, select from the *Image Type*, and provide the *Type*.
+The *Script* is a free-form text editing field where we can type and edit
+the actual script.
+
+We should now be set to create a provisioning request.
+
+==== Requesting Physical Server Provisioning
+
+We start off by visiting the physical servers list in *Compute -> Physical
+Infrastructure -> Servers*. On the server list, we check one or more checkboxes
+to select the servers to be used in the provisioning request. This enables the
+*Lifecycle* menu.
+
+image::docs_redfish_using15_lifecycle_provisioning_menu.png[alt="Lifecycle menu for Provisioning Selected Physical Servers",350,align="center"]
+
+Click the *Lifecycle -> Provision Selected Physical Servers*. This opens the
+dialog for filling in the request.
+
+image::docs_redfish_using16_provisioning_dialog_default.png[alt="Provision Selected Physical Servers dialog",350,align="center"]
+
+NOTE: If from the server list, we click on a server, then we can initiate the
+same dialog by clicking *Lifecycle -> Provision Physical Server* from the
+Physical Server's summary.
+
+The dialog informs us on the number of servers selected for this request. It
+presents the following fields that we need to fill:
+
+* *PXE Server*: selection of the PXE servers registered in the
+  {product-appliance}.
+* *PXE Image*: pick a name of the Operating System image that the selected
+  servers should be booted into.
+* *Customization Template*: pick the name of the customization template to be
+  applied at each selected server. The customization templates provide custom
+  instructions used by the Operating System installers to perform unattended
+  installation.
+
+image::docs_redfish_using17_provisioning_dialog_example.png[alt="Provision Selected Physical Servers dialog - example",350,align="center"]
+
+WARNING: {redfish-provider-full} does not check for the state of provisioning
+of the selected systems from any of the previous provisioning workflows.
+Depending on the selected PXE image and customization template, proceeding with
+the provisioning *might destroy any operating systems and data on the selected
+servers*.
+
+Send the request by clicking *Provision*.
+
+==== Approving the Request for Physical Server Provisioning
+A privileged user of {product-appliance} has to approve the request. They
+visit *Services -> Requests* and look for the request of type Physical Server
+Provision and request status Pending.
+
+image::docs_redfish_using18_requests_provisioning_pending.png[alt="Pending provisioning request on request list",800,align="center"]
+
+They should open the request and click the Approve (the tick) button, then
+provide text input to *Reason* and click *Submit*.
+
+image::docs_redfish_using19_provisioning_request_approve.png[alt="Provisioning request approval",800,align="center"]
+
+They will receive a pop-up showing that they have successfully approved the
+request.
+
+image::docs_redfish_using20_provisioning_request_approval_notification.png[alt="Provisioning request success docs_redfish_using20_provisioning_request_approval_notification",800,align="center"]
+
+After a few minutes, we refresh the requests list and find that the
+request state has changed to Provisioned.
+
+image::docs_redfish_using21_provisioning_request_provisioned.png[alt="Provisioning request provisioned",800,align="center"]
+
+NOTE: The {redfish-provider-full} currently has no means of knowing when the
+provisioning has actually finished. Therefore, the status Provisioned indicates
+that the {redfish-provider} has successfully configured the PXE server to serve
+the selected image and customization template, has set the servers to boot once into network boot, and rebooted the servers. This initiates the actual process
+of Operating System booting and installation, which then takes additional time
+before it finishes.
+
+=== Physical Server Firmware Update
+include::redfish-release-notes.adoc[tags=fw-update-intro]
+
+==== Adding a Firmware Registry
+We can manage Firmware Registries in *Compute -> Infrastructure -> Firmware
+Registry*.
+
+image::firmware_update/07-firmware_registries_menu.png[alt="Opening Firmware Registries",500,align="center"]
+
+Here, we use the *Configuration -> Add new Firmware Registry* to open
+a new registry dialog.
+
+image::firmware_update/09-add-new-firmware-registry-menu.png[alt="Add new Firmware Registry menu option",500,align="center"]
+
+image::firmware_update/10-add-new-firmware-registry-dialog.png[alt="Add a new Firmware Registry dialog",500,align="center"]
+
+We populate the fields for our Firmware Registry:
+
+* *Registry Type*: selection of the type of the Firmware Registry service.
+  Currently, only the *Rest API Depot* is supported. Please see the
+  <<Prerequisites>> section.
+* *Name*: human-friendly display name for the registry.
+* *URL*: the URL to the service's access point.
+* *Username*: the user name part of the access credentials.
+* *Password*: the password part of the access credentials.
+
+image::firmware_update/11-add-new-firmware-registry-dialog-populated.png[alt="Add a new Firmware Registry dialog, populated",500,align="center"]
+
+We confirm the new Firmware Registry settings by clicking *Add*.
+
+image::firmware_update/12-add-new-firmware-registry-success.png[alt="Successfully added a Firmware Registry",500,align="center"]
+
+After a few seconds, we refresh our browser window to see the registry appear
+on the list.
+
+image::firmware_update/13-firmware-registry-list.png[alt="Firmware Registries list, populated",500,align="center"]
+
+By clicking on the entry in the list, we open the summary view of the firmware
+registry. If all has gone well, we'll see a *Firmware Binaries* list populated
+by the entries available in the registry.
+
+image::firmware_update/14-firmware-registry-summary.png[alt="Firmware Registry summary",1000,align="center"]
+
+Clicking on this table's entries will display the details of the selected
+firmware update binary. The details also include a list that shows which
+manufacturer and model servers will be able to apply the particular firmware
+update binary.
+
+NOTE: It is currently not possible to edit a Firmware Registry once we have
+added it. To change any settings, we need to delete the Firmware Registry and
+then add a new one.
+
+We are now ready to request a firmware update of the physical systems.
+
+==== Requesting a Firmware Update
+We start off by visiting the physical servers list in *Compute -> Physical
+Infrastructure -> Servers*. On the server list, we check one or more checkboxes
+to select the servers to be targeted for firmware update. This enables the
+*Lifecycle* menu.
+
+image::firmware_update/center_menu.png[alt="Lifecycle menu for Firmware Update of Selected Physical Servers",550,align="center"]
+
+Click the *Lifecycle -> Update Firmware of Physical Servers*. This opens the
+dialog for filling in the request.
+
+image::firmware_update/popup.png[alt="Update Physical Server's Firmware dialog",350,align="center"]
+
+NOTE: Same dialog can be accessed from within physical server's details page.
+
+The dialog informs us on the number of servers selected for this request. It also
+presents the following one field that we need to fill:
+
+* *Firmware Binary*: selection of the firmware binary to install on selected physical servers
+
+image::firmware_update/popup_filled.png[alt="Update Physical Server's Firmware dialog (filled)",350,align="center"]
+
+NOTE: Only compatible firmware binaries are available to choose from based on our current
+selection of physical servers. If we don't have any firmware binaries
+listed this means that either we don't have Firmware Registry set up correctly (visit
+*Compute -> Infrastructure -> Firmware Registry* to set it up) or that there are simply no
+compatible firmware binaries available for the selected physical server.
+
+
+Select desired firmware binary from the list and click *Apply Firmware*.
+
+image::firmware_update/request_created.png[alt="Firmware Update request created",1227,align="center"]
+
+Firmware Update request gets executed without manual approval (it gets auto-approved). You can
+track its progress by visiting *Services -> Requests* and look for the request of type
+Physical Server Firmware Update.
+
+image::firmware_update/request_list_view.png[alt="Firmware Update request completed (list view)",800,align="center"]
+
+Click on the request to examine more details. Firmware Update process is completed when it
+reaches *Finished* Request State (see screenshot below). If Status is *Ok* it means firmware
+got successfully updated while *Error* state indicates there were some problems hence firmware
+update was not fully performed on all target physical servers.
+
+image::firmware_update/request_details_view.png[alt="Firmware Update request completed (details view)",500,align="center"]

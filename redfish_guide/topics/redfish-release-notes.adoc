@@ -6,12 +6,15 @@ The {product-title} supports the following {redfish-provider} functionality:
 * LED Identification Operations
 * Power Operations
 * Events
+* Physical Server Provisioning
+* Physical Server Firmware Update
 
 === Inventory
 {redfish-provider} collects the inventory on all of the discoverable systems,
-populating the database behind the scenes. The first inventory operation is
-automatic, while the subsequent ones occur either regularly or manually.
-The inventory is currently not updated upon {redfish} events.
+populating the database behind the scenes. When a new provider is added,
+the inventory operation is automatic. The subsequent inventory updates occur
+either regularly or manually. The inventory is currently not updated upon
+{redfish} events.
 
 Depending on the capabilities of the systems under inventory, the {redfish}
 may distinguish between entities such as blocks, racks, sleds, chassis, physical
@@ -28,9 +31,9 @@ as follows:
 
 
 === LED Identification Operations
-Physical systems may support identification through remotly manipulating a
-dedicated identification LED located somewhere on the enclosure.
-{product-title} provides the following identification LED operations:
+Physical systems may feature a built-in LED somewhere on its enclosure that can
+help visually identify the system instance by using its remotely controlled
+state. {product-title} provides the following identification LED operations:
 
 [options="header",alt="Identity LED action to status mapping"]
 |===============================================================================
@@ -68,3 +71,30 @@ The following power actions are *not* supported:
 Server-Side Events (SSE) technology. The events received are then completely
 dependent on the vendor's implementation and the Baseboard Management Controller
 (BMC) configuration.
+
+=== Physical Server Provisioning
+With {redfish-provider} it is possible to request performing bare-metal
+provisioning of an operating system on the physical systems. This lets the users
+boot selected physical servers into live Operating Systems or run full
+Operating System installations.
+
+{redfish-provider} relies on {product-title}'s built-in support for the Preboot
+Execution Environment (PXE) servers to serve the Operating System boot files and
+customization templates.
+
+=== Physical Server Firmware Update
+// We tag following chunk of text so that we can reuse it later with `include::`
+// tag::fw-update-intro[]
+{redfish-provider} enables performing firmware update of the supported {redfish}
+physical systems. The Firmware Update functionality consists of the following:
+
+* *Firmware Registry integration*. Firmware Registry is an external service that contains
+  a list of binaries that are the payload in the firmware update process. The registry
+  integration provides the inventory of the available firmware binaries tagged by
+  manufacturer and system model. Only compatible binaries are offered to install on a
+  specific server.
+* *Firmware Update request*. Firmware Update process is implemented in a form of
+  {product-title_short} request which can be initialized either from physical server details
+  page or list page. The latter allows one to initiate firmware update process on a number
+  of servers in one go.
+// end::fw-update-intro[]
